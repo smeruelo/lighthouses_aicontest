@@ -76,7 +76,7 @@ class BotPlayer(object):
                             for c in self.game.conns if lh.pos in c]
             lighthouses.append({
                 "position": lh.pos,
-                "owner": lh.owner,
+                "owner": lh.owner if lh.owner is not None else -1,
                 "energy": lh.energy,
                 "connections": connections,
                 "have_key": lh.pos in self.player.keys,
